@@ -1,0 +1,7 @@
+dlt[mssql,duckdb]
+sqlalchemy
+pyodbc
+pymssql
+pandas
+requests
+python-dateutil

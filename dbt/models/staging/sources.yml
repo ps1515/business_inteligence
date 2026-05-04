@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: extract
+    database: "{{ target.database }}"
+    schema: Extract
+    tables:
+      - name: Product
+      - name: ProductSubcategory
+      - name: ProductCategory
+      - name: SalesPerson
+      - name: SalesTerritory
+      - name: Person
+      - name: CountryRegion
+      - name: SalesOrderHeader
+      - name: SalesOrderDetail
+      - name: ProductRating
+      - name: CurrencyRateData

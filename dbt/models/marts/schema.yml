@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: "Wymiar produktow z ocenami i atrybutami obliczeniowymi."
+    columns:
+      - name: product_id
+        tests: [not_null, unique]
+      - name: active
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['ACTIVE', 'INACTIVE']
+      - name: discreteprice
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['LOW', 'MEDIUM', 'HIGH', 'VERY HIGH']
+
+  - name: dim_salesperson
+    description: "Wymiar sprzedawcow wzbogacony o terytorium."
+    columns:
+      - name: salesperson_id
+        tests: [not_null, unique]
+      - name: salesperson_full_name
+        tests: [not_null]
+
+  - name: dim_sales_territory
+    description: "Wymiar terytorium sprzedazy."
+    columns:
+      - name: territory_id
+        tests: [not_null, unique]
+
+  - name: dim_order_date
+    description: "Wymiar daty zamowienia."
+    columns:
+      - name: date_key
+        tests: [not_null, unique]
+      - name: order_date
+        tests: [not_null, unique]
+
+  - name: fact_sales
+    description: "Fakty sprzedazy na poziomie pozycji zamowienia."
+    columns:
+      - name: sales_key
+        tests: [not_null, unique]
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_product')
+                field: product_id
+      - name: date_key
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_order_date')
+                field: date_key

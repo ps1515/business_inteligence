@@ -1,0 +1,15 @@
+lab5_bi:
+  target: dev
+  outputs:
+    dev:
+      type: sqlserver
+      driver: "ODBC Driver 18 for SQL Server"
+      server: "localhost"
+      port: 1433
+      database: "BI_LAB5"
+      schema: "Staging"
+      user: "sa"
+      password: "TwojeHaslo"
+      encrypt: false
+      trust_cert: true
+      threads: 4
