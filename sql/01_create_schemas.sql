@@ -1,7 +1,3 @@
-/*
-Uruchom w bazie docelowej, np. BI_LAB5.
-*/
-
 IF SCHEMA_ID('Extract') IS NULL
     EXEC ('CREATE SCHEMA [Extract]');
 GO

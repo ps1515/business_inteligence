@@ -1,8 +1,3 @@
-/*
-Zadanie 3.6 - puste struktury modelu gwiazdy (warstwa Staging).
-Po wykonaniu skryptu tabele sa gotowe do ladowania.
-*/
-
 IF OBJECT_ID('Staging.DimProduct', 'U') IS NOT NULL DROP TABLE Staging.DimProduct;
 IF OBJECT_ID('Staging.DimSalesperson', 'U') IS NOT NULL DROP TABLE Staging.DimSalesperson;
 IF OBJECT_ID('Staging.DimSalesTerritory', 'U') IS NOT NULL DROP TABLE Staging.DimSalesTerritory;

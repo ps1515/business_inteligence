@@ -5,11 +5,6 @@ from dlt.sources.sql_database import sql_database
 
 
 def run_extract_load() -> None:
-    """
-    Faza C / Zadanie 2:
-    Kopiuje dane z AdventureWorks do schematu [Extract] w bazie docelowej.
-    Dane sa ladowane "as-is" (bez logiki biznesowej).
-    """
     pipeline = dlt.pipeline(
         pipeline_name="aw_to_extract",
         destination="mssql",

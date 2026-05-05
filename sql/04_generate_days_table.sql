@@ -1,8 +1,3 @@
-/*
-Wariant T-SQL zgodny z instrukcja z PDF (Zadanie 3.4b).
-Zaklada ze pracujesz w bazie BI_LAB5 i masz dane w Extract.SalesOrderHeader.
-*/
-
 DECLARE @start_date date = (
     SELECT MIN(CAST(DATEADD(year, 11, OrderDate) AS date))
     FROM Extract.SalesOrderHeader

@@ -1,8 +1,3 @@
-/*
-Fallback ekstrakcji "as-is" z lokalnego AdventureWorks2014 do Lab5_BI.Extract.
-Uruchamiac na serwerze lokalnym SQL Server.
-*/
-
 USE Lab5_BI;
 GO
 

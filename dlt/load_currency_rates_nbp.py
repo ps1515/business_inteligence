@@ -14,13 +14,8 @@ NBP_BASE_URL = "https://api.nbp.pl/api/exchangerates/rates/A"
 
 
 def fetch_currency_rates(currency_code: str, days: int) -> pd.DataFrame:
-    """
-    Pobiera srednie kursy NBP dla podanej waluty z ostatnich N dni.
-    API zwraca tylko dni notowan (bez weekendow i swiat).
-    """
     end_date = date.today()
     start_date = end_date - timedelta(days=days)
-    # API NBP ogranicza zakres jednego zapytania do 367 dni.
     records = []
     cursor = start_date
     max_window = timedelta(days=366)

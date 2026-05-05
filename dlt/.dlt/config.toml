@@ -2,7 +2,6 @@
 log_level = "INFO"
 
 [sources.sql_database]
-# Ustaw na true, jesli wolisz introspekcje tylko wybranego schematu.
 defer_table_reflect = false
 
 [normalize]
